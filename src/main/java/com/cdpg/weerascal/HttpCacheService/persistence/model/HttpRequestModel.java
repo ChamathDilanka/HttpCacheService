@@ -4,6 +4,10 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * Entity class used in persist layer.
+ */
+
 @Entity
 public class HttpRequestModel implements Serializable {
 

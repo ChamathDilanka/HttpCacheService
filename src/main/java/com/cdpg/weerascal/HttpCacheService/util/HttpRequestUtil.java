@@ -4,8 +4,15 @@ import org.springframework.web.client.RestTemplate;
 
 import com.google.common.base.Strings;
 
+/**
+ * Utility class class.
+ */
+
 public class HttpRequestUtil
 {
+  /**
+   * External service URL to fetch random IDs.
+   */
   private static final String ID_GENERATOR_URL = "http://danielbayley.uk/nhs-number/api/NhsNumbers/GetNhsNumbers";
 
   private static final String SPLIT_CHARACTER = ",";
@@ -26,12 +33,18 @@ public class HttpRequestUtil
     return HttpRequestUtilSingletonHolder.INSTANCE;
   }
 
+  /**
+   * Call external services and get set of random IDs.
+   */
   String getNHSNumbers()
   {
     RestTemplate restTemplate = new RestTemplate();
     return restTemplate.getForObject(ID_GENERATOR_URL, String.class);
   }
 
+  /**
+   * Return a selected random number after removing spaces.
+   */
   private String getRandomNHSNumber()
   {
     String result = getNHSNumbers();

@@ -5,6 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.cdpg.weerascal.HttpCacheService.persistence.model.HttpRequestModel;
 
+/**
+ * JPA repository interface.
+ */
+
 @Repository
 public interface HttpRequestRepository extends JpaRepository<HttpRequestModel, Long>
 {
